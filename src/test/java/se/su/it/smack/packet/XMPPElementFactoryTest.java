@@ -32,7 +32,7 @@ public class XMPPElementFactoryTest extends TestCase {
 	    final PubSubProvider psp = new PubSubProvider();
 	    final PubSub pubsub = (PubSub) psp.parseIQ(pp);
 	    final SubscriptionsElement subscriptions = (SubscriptionsElement) pubsub.getChildren().get(0);
-	    final List<SubscriptionElement> lists = subscriptions.getChildren();
+	    final List lists = subscriptions.getChildren();
 	    assertEquals(7, lists.size());
         pubsub.getChildren();
 	    
