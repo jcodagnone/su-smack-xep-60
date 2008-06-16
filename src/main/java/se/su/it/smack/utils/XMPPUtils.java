@@ -66,7 +66,12 @@ public class XMPPUtils {
 	{
 		PacketCollector pc = c.createPacketCollector(new PacketIDFilter(p.getPacketID()));
 		c.sendPacket(p);
-		Packet result = pc.nextResult(timeout);
+		final Packet result; 
+		if(timeout == 0) {
+		    result = pc.nextResult();
+		} else {
+		    result = pc.nextResult(timeout);
+		}
 		if (result == null)
 			throw new XMPPException("Timeout occured waiting for response to id "+p.getPacketID());
 		XMPPError error = result.getError();
