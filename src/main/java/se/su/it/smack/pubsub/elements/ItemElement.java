@@ -142,9 +142,13 @@ public class ItemElement implements XMPPElement {
 		{
 			BeanUtils.setProperty(this,pp.getAttributeName(i),pp.getAttributeValue(i));
 		}
-		pp.nextTag();
-		DOM2XmlPullBuilder2 domBuilder = new DOM2XmlPullBuilder2();
-		setContent(domBuilder.parseSubTree(pp));
+		int event = pp.nextTag();
+		if(event == XmlPullParser.END_TAG) {
+		    // no content "<item id="a/b/c"/>
+		} else {
+    		DOM2XmlPullBuilder2 domBuilder = new DOM2XmlPullBuilder2();
+    		setContent(domBuilder.parseSubTree(pp));
+		}
 	}
 
 }
