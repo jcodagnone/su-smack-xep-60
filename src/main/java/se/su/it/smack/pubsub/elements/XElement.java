@@ -15,7 +15,6 @@ public class XElement extends PubSubElement {
     }
 
     /** @see XMPPElementSupport#toXML() */
-    @Override
     public String toXML() {
         return null;
     }

@@ -29,7 +29,6 @@ public class UnsubscribeElement extends PubSubElement {
     }
     
     /** @see PubSubElement#getName() */
-    @Override
     public final String getName() {
         return "unsubscribe";
     }
@@ -43,7 +42,6 @@ public class UnsubscribeElement extends PubSubElement {
     }
 
     /** @see XMPPElementSupport#toXML() */
-    @Override
     public final String toXML() {
         StringBuffer buf = new StringBuffer();
         buf.append("<").append(getName());

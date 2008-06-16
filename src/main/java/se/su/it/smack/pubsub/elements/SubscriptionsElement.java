@@ -3,6 +3,7 @@
  */
 package se.su.it.smack.pubsub.elements;
 
+import java.util.Iterator;
 import java.util.List;
 
 import se.su.it.smack.packet.XMPPElementSupport;
@@ -23,21 +24,20 @@ import se.su.it.smack.packet.XMPPElementSupport;
 public class SubscriptionsElement extends PubSubElement {
    
     /** @see PubSubElement#getName() */
-    @Override
     public String getName() {
         return "subscriptions";
     }
 
     /** @see XMPPElementSupport#toXML() */
-    @Override
     public String toXML() {
         final StringBuilder sb = new StringBuilder();
         sb.append("<").append(getName());
         
         if(getChildren() != null && !getChildren().isEmpty()) {
             sb.append(">\n");
-            final List<SubscriptionElement> subscriptions = getChildren();
-            for (final SubscriptionElement subscription : subscriptions) {
+            final List subscriptions = getChildren();
+            for (final Iterator i = subscriptions.iterator(); i.hasNext();) {
+                SubscriptionElement subscription = (SubscriptionElement) i.next();
                 sb.append("\t");
                 sb.append(subscription.toXML());
                 sb.append("\n");
