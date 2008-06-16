@@ -1,0 +1,24 @@
+		<subscriptions>
+			<subscription affiliation="owner"
+				node="ar/com/zauber/scm/commit/zauber/3rdparty"
+				subscription="subscribed"
+				subid="G8tT1hxxKyyAia2LC84qQ6VBy2xPIFC797wgC0EP" jid="juan@dinah" />
+			<subscription affiliation="owner" node="ar/com"
+				subscription="subscribed"
+				subid="kz235OXvAwD74jch25QAX9ky5q3218T515r3Tgpd" jid="juan@dinah" />
+			<subscription affiliation="owner" node="ar/com/zauber"
+				subscription="subscribed"
+				subid="Q94onBA6a2Gq2NYN8S6zI8o8cCTPaVjOI6Qyeh9D" jid="juan@dinah" />
+			<subscription affiliation="owner"
+				node="ar/com/zauber/scm/commit/zauber" subscription="subscribed"
+				subid="fdtH4PxrDBM0W7dKKhUXAhA8GUBDlbgmQYJ9pVC3" jid="juan@dinah" />
+			<subscription affiliation="owner"
+				node="ar/com/zauber/scm/commit" subscription="subscribed"
+				subid="QFT3y09FY39P42b0cYBjG4lFx6pgkUpW02si8gxt" jid="juan@dinah" />
+			<subscription affiliation="owner" node="ar/com/zauber/scm"
+				subscription="subscribed"
+				subid="0iu8s11S13XD2bX7d3o7Jw5oH5QWb3EItL7CfC2m" jid="juan@dinah" />
+			<subscription affiliation="owner" node="ar"
+				subscription="subscribed"
+				subid="NBA96lCge2HOSSJX7kzox20lXt4kNdcF7NW2W4B3" jid="juan@dinah" />
+		</subscriptions>
