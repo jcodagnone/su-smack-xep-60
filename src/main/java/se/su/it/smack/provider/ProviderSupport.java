@@ -42,6 +42,10 @@ public abstract class ProviderSupport {
 				{
 					XMPPElement parent = (XMPPElement)stack.peek();
 					parent.addChild(child);
+					
+					if(stack.size() == 1) {
+					    done = true;
+					}
 				}
 				else
 				{
