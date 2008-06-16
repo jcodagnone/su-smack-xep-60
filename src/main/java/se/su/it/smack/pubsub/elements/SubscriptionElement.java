@@ -10,8 +10,26 @@ import se.su.it.smack.pubsub.elements.PubSubElement;
 public class SubscriptionElement extends PubSubElement {
 	private String jid;
 	private String subscription;
+	private String affiliation;
+	private String subid;
 
-	public String getName() {
+	public final String getSubid() {
+        return subid;
+    }
+
+    public final void setSubid(String subid) {
+        this.subid = subid;
+    }
+
+    public final String getAffiliation() {
+        return affiliation;
+    }
+
+    public final void setAffiliation(String affiliation) {
+        this.affiliation = affiliation;
+    }
+
+    public String getName() {
 		return "subscription";
 	}
 
@@ -61,6 +79,12 @@ public class SubscriptionElement extends PubSubElement {
 
 		if (getJid() != null)
 			buf.append(" jid=\"").append(getJid()).append("\"");
+		
+		if (getSubid() != null)
+            buf.append(" subid=\"").append(getSubid()).append("\"");
+		
+		if (getAffiliation() != null)
+            buf.append(" affiliation=\"").append(affiliation).append("\"");
 
 		if (getSubscription() != null)
 			buf.append(" subscription=\"").append(getSubscription()).append("\"");
