@@ -33,6 +33,22 @@ public class SubscriptionsElement extends PubSubElement {
         final StringBuilder sb = new StringBuilder();
         sb.append("<").append(getName());
         
+        if(getNode() != null) {
+            /*
+             * Example 24. Entity requests current subscriptions from a specific node
+             * 
+             * <iq type='get' from='francisco@denmark.lit/barracks'
+             *                to='pubsub.shakespeare.lit'
+             *                id='subscriptions2'>
+             *   <pubsub xmlns='http://jabber.org/protocol/pubsub'>
+             *      <subscriptions node='princely_musings'/>
+             *   </pubsub>
+             * </iq>
+             */
+           sb.append(" node=\"");
+           sb.append(getNode());
+           sb.append("\"");
+        }
         if(getChildren() != null && !getChildren().isEmpty()) {
             sb.append(">\n");
             final List subscriptions = getChildren();
