@@ -18,6 +18,7 @@ import se.su.it.smack.pubsub.elements.PubSubElement;
 public class PubSub extends IQ implements XMPPElement {
 
 	private static final String NS = "http://jabber.org/protocol/pubsub";
+	private String uriFragment;
 	
 	private XMPPElement child;
 	
@@ -67,7 +68,7 @@ public class PubSub extends IQ implements XMPPElement {
 	        elem = (PubSubElement)iter.next();
 	        markup += elem.toXML();
 	    }
-	    return "\n<pubsub xmlns=\""+NS+"\">\n"+ markup +"</pubsub>";
+	    return "\n<pubsub xmlns=\""+ getNamespace() +"\">\n"+ markup +"</pubsub>";
 	}
 
 	public List getChildren() {
@@ -83,7 +84,7 @@ public class PubSub extends IQ implements XMPPElement {
 	}
 
 	public String getNamespace() {
-		return NS;
+		return uriFragment == null ? NS :  (NS + uriFragment);
 	}
 	
 	
@@ -99,4 +100,12 @@ public class PubSub extends IQ implements XMPPElement {
 	public void parse(XmlPullParser pp) throws Exception {
 		throw new IllegalArgumentException("should not be called");
 	}
+
+    public final String getUriFragment() {
+        return uriFragment;
+    }
+
+    public final void setUriFragment(String uriFragment) {
+        this.uriFragment = uriFragment;
+    }
 }
