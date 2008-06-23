@@ -50,7 +50,7 @@ public class ConfigureElement extends PubSubElement
                 
             return "  <configure " + (getNode() == null ? "" :  
                          (" node='" + getNode() + "' "))
-                    + "\n    <x xmlns='jabber:x:data' type='submit'>\n"
+                    + ">\n    <x xmlns='jabber:x:data' type='submit'>\n"
                     + "      <field var='FORM_TYPE' type='hidden'>"
                     + "<value>http://jabber.org/protocol/pubsub#node_config</value>"
                     + "</field>\n"
