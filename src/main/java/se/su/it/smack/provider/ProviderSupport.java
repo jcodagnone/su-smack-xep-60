@@ -12,6 +12,7 @@ import org.xmlpull.v1.XmlPullParser;
 
 import se.su.it.smack.packet.XMPPElement;
 import se.su.it.smack.packet.XMPPElementFactory;
+import se.su.it.smack.pubsub.elements.ContentableElement;
 
 public abstract class ProviderSupport {
 
@@ -57,6 +58,16 @@ public abstract class ProviderSupport {
 			{
 				XMPPElement elt = XMPPElementFactory.create(pp);
 				stack.push(elt);
+			}
+			
+			if (eventType == XmlPullParser.TEXT)
+			{
+			    Object e = stack.peek();
+			    if(e instanceof ContentableElement)
+			    {
+			        final ContentableElement c = (ContentableElement) e;
+			        c.setContent(pp.getText());
+			    }
 			}
 		}
 			

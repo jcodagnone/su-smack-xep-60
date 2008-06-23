@@ -5,6 +5,11 @@
         <namespace>http://jabber.org/protocol/pubsub</namespace>
         <className>se.su.it.smack.provider.PubSubProvider</className>
     </iqProvider>
+    <iqProvider>
+        <elementName>pubsub</elementName>
+        <namespace>http://jabber.org/protocol/pubsub#owner</namespace>
+        <className>se.su.it.smack.provider.PubSubProvider</className>
+    </iqProvider>
     <extensionProvider>
     	<elementName>event</elementName>
     	<namespace>http://jabber.org/protocol/pubsub#event</namespace>
@@ -15,4 +20,5 @@
     	<namespace>http://jabber.org/protocol/pubsub#event</namespace>
     	<className>se.su.it.smack.provider.PubSubXEventProvider</className>
     </extensionProvider>
+    
 </smackProviders>

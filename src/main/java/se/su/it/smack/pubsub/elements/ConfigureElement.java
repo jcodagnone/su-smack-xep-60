@@ -35,7 +35,9 @@ public class ConfigureElement extends PubSubElement
     public String toXML()
     {
         if (fields == null || fields.isEmpty())
-            return "  <configure/>\n";
+            return "  <configure " + 
+                (getNode() == null ?  "" : (" node='" + getNode() + "' ")) 
+                   + "/>\n";
         else {
             String markup = "", name;
             Enumeration names = fields.keys();
@@ -43,7 +45,12 @@ public class ConfigureElement extends PubSubElement
                 name = (String)names.nextElement();
                 markup += "      <field var='" + name + "'><value>" + fields.get(name) + "</value></field>\n";
             }
-            return "  <configure>\n    <x xmlns='jabber:x:data' type='submit'>\n"
+            
+            
+                
+            return "  <configure " + (getNode() == null ? "" :  
+                         (" node='" + getNode() + "' "))
+                    + "\n    <x xmlns='jabber:x:data' type='submit'>\n"
                     + "      <field var='FORM_TYPE' type='hidden'>"
                     + "<value>http://jabber.org/protocol/pubsub#node_config</value>"
                     + "</field>\n"
