@@ -35,7 +35,7 @@ public class ConfigureElement extends PubSubElement
     public String toXML()
     {
         if (fields == null || fields.isEmpty())
-            return "  <configure " + 
+            return "  <" + getName() + " " + 
                 (getNode() == null ?  "" : (" node='" + getNode() + "' ")) 
                    + "/>\n";
         else {
@@ -48,7 +48,7 @@ public class ConfigureElement extends PubSubElement
             
             
                 
-            return "  <configure " + (getNode() == null ? "" :  
+            return "  <" + getName() + " " + (getNode() == null ? "" :  
                          (" node='" + getNode() + "' "))
                     + ">\n    <x xmlns='jabber:x:data' type='submit'>\n"
                     + "      <field var='FORM_TYPE' type='hidden'>"
