@@ -43,6 +43,19 @@
       <connection>scm:svn:svn://anonsvn.it.su.se/su-smack</connection>
       <developerConnection>scm:svn:svn+ssh://svn.it.su.se/afs/su.se/services/svn/su-smack</developerConnection>
     </scm>
+  <distributionManagement>
+    <repository>
+      <id>zauber-internal-releases</id>
+      <name>Zauber Internal Releases</name>
+      <url>https://repo1.zauber.com.ar/zauber/internal/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>zauber-internal-snapshots</id>
+      <name>Zauber Internal Snapshots</name>
+      <url>https://repo1.zauber.com.ar/zauber/internal/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
     <dependencies>
         <dependency>
            <groupId>junit</groupId>
@@ -118,16 +131,6 @@
             </resource>
         </resources>
     </build>
-    <distributionManagement>
-      <repository>
-        <id>ssh-repository</id>
-        <url>scpexe://svn.it.su.se/afs/su.se/services/maven/it.su.se/maven2</url>
-      </repository>
-      <site>
-        <id>website</id>
-        <url>scpexe://svn.it.su.se/afs/su.se/services/www/hosts/devel.it.su.se/pages/su-smack</url>
-      </site>
-    </distributionManagement>
     <repositories>
       <repository>
         <name>SU Maven2</name>
