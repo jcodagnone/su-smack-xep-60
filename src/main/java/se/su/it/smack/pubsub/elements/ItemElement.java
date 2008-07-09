@@ -89,11 +89,26 @@ public class ItemElement implements XMPPElement {
 		case Node.ELEMENT_NODE:
 			buf.append("<").append(node.getNodeName());
 			NamedNodeMap attrs = node.getAttributes();
+			
+			final boolean hasNamespace = node.getNamespaceURI() != null; 
+			if (hasNamespace) 
+            {
+                buf.append(" ").append("xmlns=\"").append(node.getNamespaceURI()).append("\"");
+            }
+			
 			for (int i = 0; i < attrs.getLength(); i++)
 			{
 				Node a = attrs.item(i);
-				buf.append(" ").append(a.getNodeName()).append("=\"").append(a.getNodeValue()).append("\"");
+				if(hasNamespace && a.getNodeName().equals("xmlns")) 
+				{
+				    // nothing
+				} else {
+				    buf.append(" ").append(a.getNodeName()).append("=\"")
+				                   .append(a.getNodeValue()).append("\"");
+				}
 			}
+			
+			
 			NodeList children = node.getChildNodes();
 			if (children != null && children.getLength() > 0)
 			{
