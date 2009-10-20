@@ -4,7 +4,7 @@
     <artifactId>su-smack</artifactId>
     <name>su-smack</name>
     <groupId>su-smack</groupId>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.4-branch24-20091020</version>
     <packaging>jar</packaging>
     <url>http://devel.it.su.se/</url>
     <description>SuSmack is an implementation of JEP-0060 for SMACK</description>
